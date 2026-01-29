@@ -18,7 +18,12 @@ function App() {
   const renderSection = () => {
     switch (activeSection) {
       case 'HOME':
-        return <Hero onViewWorks={() => setActiveSection('PORTFOLIO')} />;
+        return (
+          <Hero 
+            onPortfolio={() => setActiveSection('PORTFOLIO')} 
+            onContact={() => setActiveSection('CONTACT')} 
+          />
+        );
       case 'PORTFOLIO':
         return <Portfolio />;
       case 'ABOUT':
@@ -26,7 +31,12 @@ function App() {
       case 'CONTACT':
         return <Contact />;
       default:
-        return <Hero onViewWorks={() => setActiveSection('PORTFOLIO')} />;
+        return (
+          <Hero 
+            onPortfolio={() => setActiveSection('PORTFOLIO')} 
+            onContact={() => setActiveSection('CONTACT')} 
+          />
+        );
     }
   };
 
