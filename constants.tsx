@@ -1,78 +1,74 @@
 
 import { Project } from './types';
 
+/**
+ * 이미지 로딩 전략:
+ * 사용자의 파일 구조에 맞춰 /public/images/ 경로를 사용합니다.
+ */
+const IMAGE_BASE = "/public/images/";
+
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: 'Minimalist White Penthouse',
+    title: 'Residential Project 01',
     category: 'RESIDENTIAL',
-    location: 'Seoul, Gangnam',
-    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200',
+    location: 'Seoul',
+    imageUrl: `${IMAGE_BASE}1.png`,
     subImages: [
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1600566753190-17f0bab2a674?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1200'
+      `${IMAGE_BASE}1_1.png`,
+      `${IMAGE_BASE}1_2.png`,
+      `${IMAGE_BASE}1_3.png`
     ],
-    description: 'A clean, modern approach to urban living with emphasis on natural light and negative space.'
+    description: '디자인뮤가 제안하는 고품격 주거 공간 프로젝트입니다. 공간의 효율성과 미학적 가치를 동시에 추구합니다.'
   },
   {
     id: 2,
-    title: 'Modern Hanok Suite',
+    title: 'Residential Project 02',
     category: 'RESIDENTIAL',
-    location: 'Seoul, Bukchon',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+    location: 'Gyeonggi',
+    imageUrl: `${IMAGE_BASE}2.png`,
     subImages: [
-      'https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1200'
+      `${IMAGE_BASE}2_1.png`,
+      `${IMAGE_BASE}2_2.png`
     ],
-    description: 'Traditional Korean architecture meeting contemporary luxury standards and modern comforts.'
+    description: '삶의 질을 높이는 감각적인 인테리어 솔루션입니다. 자연 친화적인 소재와 모던한 디자인의 조화를 경험하세요.'
   },
   {
     id: 3,
-    title: 'Warm Wood Family House',
+    title: 'Residential Project 03',
     category: 'RESIDENTIAL',
-    location: 'Gyeonggi, Pangyo',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
+    location: 'Incheon',
+    imageUrl: `${IMAGE_BASE}3.png`,
     subImages: [
-      'https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200'
+      `${IMAGE_BASE}3_1.png`
     ],
-    description: 'A nurturing environment using natural materials to create a sense of belonging and warmth.'
+    description: '사용자의 라이프스타일을 반영한 맞춤형 주거 설계 프로젝트입니다.'
   },
   {
     id: 4,
-    title: 'Urban Studio Apartment',
+    title: 'Residential Project 04',
     category: 'RESIDENTIAL',
-    location: 'Seoul, Mapo',
-    imageUrl: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1200',
-    subImages: [
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1200'
-    ],
-    description: 'Maximizing space and functionality in a compact urban setting without compromising style.'
+    location: 'Seoul',
+    imageUrl: `${IMAGE_BASE}4.png`,
+    subImages: [],
+    description: '미니멀리즘을 기반으로 한 깔끔하고 정돈된 주거 공간입니다.'
   },
   {
     id: 5,
-    title: 'Classic Luxury Residence',
+    title: 'Residential Project 05',
     category: 'RESIDENTIAL',
-    location: 'Seoul, Hannam',
-    imageUrl: 'https://images.unsplash.com/photo-1600607687940-47a04f699773?auto=format&fit=crop&q=80&w=1200',
-    subImages: [
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6f3ea?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&q=80&w=1200'
-    ],
-    description: 'Timeless elegance combined with state-of-the-art smart home integration.'
+    location: 'Busan',
+    imageUrl: `${IMAGE_BASE}5.png`,
+    subImages: [],
+    description: '클래식한 우아함과 현대적인 편리함이 공존하는 공간입니다.'
   },
   {
     id: 6,
-    title: 'Monochrome Living Space',
+    title: 'Residential Project 06',
     category: 'RESIDENTIAL',
-    location: 'Seoul, Seongsu',
-    imageUrl: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=1200',
-    subImages: [
-      'https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1534349762230-e0cadf78f505?auto=format&fit=crop&q=80&w=1200'
-    ],
-    description: 'A sophisticated monochrome palette creating a serene and focused creative environment.'
+    location: 'Seoul',
+    imageUrl: `${IMAGE_BASE}6.png`,
+    subImages: [],
+    description: '창의적인 공간 구성을 통해 새로운 주거 문화를 제시합니다.'
   }
 ];
