@@ -5,7 +5,8 @@ export interface Project {
   category: string;
   location: string;
   imageUrl: string;
+  subImages: string[];
   description: string;
 }
 
-export type Category = 'ALL' | 'RESIDENTIAL' | 'COMMERCIAL' | 'OFFICE';
+export type Category = 'RESIDENTIAL';

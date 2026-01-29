@@ -10,18 +10,26 @@ const Contact: React.FC = () => {
             <div className="lg:w-1/3">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">Get in Touch</h2>
               <p className="text-gray-500 mb-12">
-                프로젝트 의뢰 및 협업 관련 문의는 언제든 환영합니다. 디자인뮤와 함께 당신의 가치를 실현하세요.
+                견적 문의는 언제든 환영합니다. 디자인뮤와 함께 당신의 가치를 실현하세요.
               </p>
               
               <div className="space-y-8">
                 <div>
                   <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 mb-2 uppercase">Address</h4>
-                  <p className="text-gray-800">서울특별시 강남구 테헤란로 123, 디자인뮤 빌딩 4F</p>
+                  <p className="text-gray-800">경기도 의왕시 성고개로53, 에이스청계타워 722호</p>
                 </div>
                 <div>
                   <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 mb-2 uppercase">Contact</h4>
-                  <p className="text-gray-800">T. 02-123-4567</p>
-                  <p className="text-gray-800">E. info@designmu.co.kr</p>
+                  <p className="text-gray-800">T. 010-9878-8907</p>
+                  <p className="text-gray-800">E. hanseok122@naver.com</p>
+                  <a 
+                    href="https://www.instagram.com/design_mu_official_/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-800 hover:text-black hover:underline transition-all flex items-center gap-1 mt-1"
+                  >
+                    IG. @design_mu_official_
+                  </a>
                 </div>
                 <div>
                   <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 mb-2 uppercase">Hours</h4>
