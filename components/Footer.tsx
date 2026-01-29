@@ -2,23 +2,33 @@
 import React from 'react';
 
 const Footer: React.FC = () => {
+  const logoUrl = "https://naver.me/FK0tB7tN";
+
   return (
     <footer className="bg-black text-gray-500 py-16">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
+          <div className="flex items-center gap-4">
+            <div className="h-10 flex items-center justify-center overflow-hidden">
               <img 
-                src="사이트로고.png" 
+                src={logoUrl} 
                 alt="DESIGN MU Logo" 
-                className="w-full h-full object-contain"
+                className="h-full w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </div>
             <span className="text-white text-lg font-bold tracking-widest">DESIGN MU</span>
           </div>
           
           <div className="flex gap-8 text-sm tracking-widest">
-            <a href="#" className="hover:text-white transition-colors">INSTAGRAM</a>
+            <a 
+              href="https://www.instagram.com/design_mu_official_/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-white transition-colors"
+            >
+              INSTAGRAM
+            </a>
             <a href="#" className="hover:text-white transition-colors">PINTEREST</a>
             <a href="#" className="hover:text-white transition-colors">BLOG</a>
           </div>

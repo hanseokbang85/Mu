@@ -20,15 +20,24 @@ const Navbar: React.FC = () => {
     { name: 'CONTACT', href: '#contact' },
   ];
 
+  // The provided link is a Naver shared link. 
+  // Note: For actual web deployment, a direct image URL (e.g., ending in .png) is recommended.
+  const logoUrl = "https://naver.me/FK0tB7tN";
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+        <a href="#home" className="flex items-center gap-4 group">
+          <div className="h-8 md:h-12 flex items-center justify-center overflow-hidden">
             <img 
-              src="사이트로고.png" 
+              src={logoUrl} 
               alt="DESIGN MU Logo" 
-              className="w-full h-full object-contain"
+              className="h-full w-auto object-contain transition-all duration-300 group-hover:opacity-80"
+              style={{ 
+                // If the original logo is black, we invert it when the navbar is transparent (white on dark)
+                // and keep it original when scrolled (black on white).
+                filter: isScrolled ? 'none' : 'brightness(0) invert(1)' 
+              }}
             />
           </div>
           <span className={`text-xl font-bold tracking-widest transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}>

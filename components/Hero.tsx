@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           Make Up Your Value
         </h1>
         <p className="text-lg md:text-xl font-light tracking-wide opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
-          디자인 그 이상, 당신의 가치를 담다!!!!.
+          디자인 그 이상, 당신의 가치를 담다.
         </p>
         <div className="mt-12 opacity-0 animate-[fadeIn_1s_ease-out_2s_forwards]">
           <a 
