@@ -3,16 +3,16 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-gray-50">
+    <section id="about" className="pt-32 pb-24 bg-white min-h-screen">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Philosophy</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 uppercase tracking-tight">About Design Mu</h2>
             <p className="text-xl text-gray-600 font-light leading-relaxed mb-8">
               "Beyond Design, Make Up Your Value"<br />
-              <span className="text-sm text-gray-400">(디자인 그 이상, 당신의 가치를 담다.)</span>
+              <span className="text-sm text-gray-400 font-normal tracking-widest">(디자인 그 이상, 당신의 가치를 담다)</span>
             </p>
-            <div className="space-y-6 text-gray-700 leading-relaxed">
+            <div className="space-y-6 text-gray-700 leading-relaxed font-light">
               <p>
                 디자인뮤는 단순한 공간의 미적 완성을 넘어, 그 공간을 사용하는 사람의 가치와 본질을 탐구합니다. 
                 우리는 매 프로젝트마다 고유한 아이덴티티를 발견하고, 이를 현대적인 감각으로 풀어내는 전문가 그룹입니다.
@@ -23,23 +23,23 @@ const About: React.FC = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-gray-200">
+            <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-gray-100">
               <div>
                 <p className="text-3xl font-bold mb-2">15+</p>
-                <p className="text-xs text-gray-500 tracking-widest uppercase">Years Exp</p>
+                <p className="text-[10px] text-gray-400 tracking-[0.2em] uppercase font-bold">Years Exp</p>
               </div>
               <div>
                 <p className="text-3xl font-bold mb-2">300+</p>
-                <p className="text-xs text-gray-500 tracking-widest uppercase">Projects</p>
+                <p className="text-[10px] text-gray-400 tracking-[0.2em] uppercase font-bold">Projects</p>
               </div>
               <div>
                 <p className="text-3xl font-bold mb-2">12</p>
-                <p className="text-xs text-gray-500 tracking-widest uppercase">Awards</p>
+                <p className="text-[10px] text-gray-400 tracking-[0.2em] uppercase font-bold">Awards</p>
               </div>
             </div>
           </div>
           <div className="flex-1 relative">
-            <div className="aspect-[3/4] overflow-hidden">
+            <div className="aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
               <img 
                 src="https://images.unsplash.com/photo-1556912177-c54030775a33?auto=format&fit=crop&q=80&w=1200" 
                 alt="Studio Working" 

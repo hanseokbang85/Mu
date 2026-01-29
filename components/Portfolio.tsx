@@ -6,7 +6,6 @@ import { Project } from '../types';
 const Portfolio: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Prevent scroll when modal is open
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
@@ -16,14 +15,14 @@ const Portfolio: React.FC = () => {
   }, [selectedProject]);
 
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="pt-32 pb-24 bg-white min-h-screen">
       <div className="container mx-auto px-6">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Residential Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight uppercase">Portfolio</h2>
           <div className="w-20 h-1 bg-black"></div>
-          <p className="mt-6 text-gray-500 max-w-2xl font-light">
+          <p className="mt-6 text-gray-500 max-w-2xl font-light leading-relaxed">
             디자인뮤는 주거 공간 전문 인테리어 그룹으로서, 거주자의 삶의 방식과 취향을 가장 깊이 있게 탐구합니다. 
-            당신만을 위한 고유한 안식처를 제안합니다. 사진을 클릭하여 상세 정보를 확인하세요.
+            단순한 장식을 넘어 삶의 가치를 높이는 공간의 철학을 만나보세요.
           </p>
         </div>
 
@@ -37,7 +36,7 @@ const Portfolio: React.FC = () => {
               <img 
                 src={project.imageUrl} 
                 alt={project.title}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
                 <p className="text-xs tracking-widest mb-2 text-gray-300 uppercase">{project.location}</p>
@@ -52,13 +51,12 @@ const Portfolio: React.FC = () => {
         </div>
       </div>
 
-      {/* Modal / Gallery View */}
+      {/* Modal / Gallery View (Existing logic) */}
       {selectedProject && (
         <div 
           className="fixed inset-0 z-[100] bg-white flex flex-col animate-in fade-in duration-300"
           onClick={() => setSelectedProject(null)}
         >
-          {/* Header */}
           <div className="flex justify-between items-center p-6 md:p-10">
             <div>
               <h3 className="text-2xl font-bold tracking-tight">{selectedProject.title}</h3>
@@ -74,7 +72,6 @@ const Portfolio: React.FC = () => {
             </button>
           </div>
 
-          {/* Content */}
           <div 
             className="flex-1 overflow-y-auto px-6 md:px-10 pb-20"
             onClick={(e) => e.stopPropagation()}
@@ -86,16 +83,7 @@ const Portfolio: React.FC = () => {
                   <p className="text-gray-700 leading-relaxed font-light">
                     {selectedProject.description}
                   </p>
-                  <div className="pt-8 border-t border-gray-100">
-                    <h4 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">Space Information</h4>
-                    <div className="space-y-2 text-sm">
-                      <p><span className="text-gray-400">Category:</span> Residential</p>
-                      <p><span className="text-gray-400">Location:</span> {selectedProject.location}</p>
-                      <p><span className="text-gray-400">Year:</span> 2024</p>
-                    </div>
-                  </div>
                 </div>
-
                 <div className="lg:col-span-3 space-y-8">
                   <div className="aspect-video bg-gray-50 overflow-hidden">
                     <img 

@@ -1,7 +1,11 @@
 
 import React from 'react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onViewWorks: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onViewWorks }) => {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -27,18 +31,19 @@ const Hero: React.FC = () => {
           디자인 그 이상, 당신의 가치를 담다.
         </p>
         <div className="mt-12 opacity-0 animate-[fadeIn_1s_ease-out_2s_forwards]">
-          <a 
-            href="#portfolio" 
+          <button 
+            onClick={onViewWorks}
             className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-all"
           >
             VIEW WORKS
-          </a>
+          </button>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-px h-12 bg-white/50"></div>
+      {/* Animated Arrow instead of static scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-pulse">
+        <div className="text-[10px] tracking-[0.5em] mb-2 font-light">EXPLORE</div>
+        <div className="w-px h-12 bg-white/30 mx-auto"></div>
       </div>
 
       <style>{`

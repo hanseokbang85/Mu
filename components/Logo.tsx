@@ -8,12 +8,14 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = "h-8", color = "white" }) => {
   /**
-   * 저장소가 Public으로 전환되었으므로 깃허브 원격 주소가 가장 확실한 방법입니다.
-   * 또한 사용자가 요청한 로컬 상대 경로들을 순차적으로 시도합니다.
+   * 1. /public/images/... : 사용자가 명시적으로 요청한 경로
+   * 2. GitHub Raw URL : GitHub 저장소의 실제 이미지 데이터 주소
+   * 3. /images/... : 일반적인 웹 환경의 루트 경로
    */
   const paths = [
-    "https://raw.githubusercontent.com/hanseokbang85/Mu/main/public/images/site-logo.png",
     "/public/images/site-logo.png",
+    "https://raw.githubusercontent.com/hanseokbang85/Mu/main/public/images/site-logo.png",
+    "https://github.com/hanseokbang85/Mu/blob/main/public/images/site-logo.png?raw=true",
     "public/images/site-logo.png",
     "/images/site-logo.png"
   ];
@@ -21,6 +23,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-8", color = "white" }) => {
   const [pathIndex, setPathIndex] = useState(0);
   const [isFailed, setIsFailed] = useState(false);
 
+  // 로고 색상 제어 (이미지가 검은색일 경우를 대비해 필터 적용)
   const filterStyle = color === 'white' 
     ? { filter: 'brightness(0) invert(1)' } 
     : color === 'black' 
@@ -32,7 +35,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-8", color = "white" }) => {
       setPathIndex(pathIndex + 1);
     } else {
       setIsFailed(true);
-      console.error("모든 경로에서 로고 이미지를 불러오는 데 실패했습니다.");
+      console.error("로고 이미지를 불러올 수 없습니다. 경로를 확인해주세요.");
     }
   };
 
