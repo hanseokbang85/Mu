@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ onPortfolio, onContact }) => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black text-white">
+    <section id="home" className="relative h-screen w-full flex items-start justify-center overflow-hidden bg-black text-white">
       {/* Background Slider */}
       {HERO_IMAGES.map((img, index) => (
         <div 
@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ onPortfolio, onContact }) => {
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
+          <div className="absolute inset-0 bg-black/30 z-10"></div>
           <img 
             src={img} 
             alt={`Slide ${index}`} 
@@ -44,52 +44,29 @@ const Hero: React.FC<HeroProps> = ({ onPortfolio, onContact }) => {
         </div>
       ))}
 
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-6 text-center">
-        <div className="inline-block overflow-hidden mb-12">
-          <p className="font-eng text-[10px] md:text-xs font-light tracking-[1em] translate-y-full animate-[slideUp_1s_ease-out_0.5s_forwards] uppercase text-white/50">
-            Premium Interior Solution
-          </p>
-        </div>
-        
-        <div className="flex flex-col gap-4 md:gap-6 mb-20">
-          <div className="overflow-hidden">
-            <h2 className="font-eng text-2xl md:text-5xl lg:text-6xl font-bold tracking-[0.4em] leading-tight uppercase">
-              <span className="block translate-y-full animate-[slideUp_1.2s_cubic-bezier(0.2,1,0.3,1)_0.8s_forwards]">
-                Beyond Design
-              </span>
-            </h2>
-          </div>
-          <div className="overflow-hidden">
-            <h2 className="font-eng text-2xl md:text-5xl lg:text-6xl font-bold tracking-[0.4em] leading-tight uppercase">
-              <span className="block translate-y-full animate-[slideUp_1.2s_cubic-bezier(0.2,1,0.3,1)_1.0s_forwards]">
-                Make Up Your Value
-              </span>
-            </h2>
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 opacity-0 animate-[fadeIn_1.5s_ease-out_2.0s_forwards]">
+      {/* Content - Positioned at lower 1/3 */}
+      <div className="relative z-20 container mx-auto px-6 pt-[65vh] text-center">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 opacity-0 animate-[fadeInSlideUp_2s_ease-out_0.5s_forwards]">
           <button 
             onClick={onPortfolio}
-            className="group relative inline-flex items-center justify-center min-w-[200px] border border-white/20 px-10 py-5 text-[10px] tracking-[0.6em] hover:bg-white hover:text-black transition-all duration-700 overflow-hidden font-eng"
+            className="group relative inline-flex items-center justify-center min-w-[220px] border border-white/30 px-10 py-5 text-[10px] tracking-[0.8em] hover:border-white transition-all duration-700 overflow-hidden font-eng"
           >
-            <span className="relative z-10">PORTFOLIO</span>
-            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+            <span className="relative z-10 transition-colors duration-500 group-hover:text-black">PORTFOLIO</span>
+            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
           </button>
 
           <button 
             onClick={onContact}
-            className="group relative inline-flex items-center justify-center min-w-[200px] border border-white/20 px-10 py-5 text-[10px] tracking-[0.6em] hover:bg-white hover:text-black transition-all duration-700 overflow-hidden font-eng"
+            className="group relative inline-flex items-center justify-center min-w-[220px] border border-white/30 px-10 py-5 text-[10px] tracking-[0.8em] hover:border-white transition-all duration-700 overflow-hidden font-eng"
           >
-            <span className="relative z-10">CONTACT</span>
-            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+            <span className="relative z-10 transition-colors duration-500 group-hover:text-black">CONTACT</span>
+            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
           </button>
         </div>
       </div>
 
       {/* Slide Indicators - Minimalist style */}
-      <div className="absolute bottom-16 left-12 z-30 hidden md:flex flex-col gap-6">
+      <div className="absolute bottom-12 left-12 z-30 hidden md:flex flex-col gap-5">
         {HERO_IMAGES.map((_, index) => (
           <button
             key={index}
@@ -97,9 +74,9 @@ const Hero: React.FC<HeroProps> = ({ onPortfolio, onContact }) => {
             className="group flex items-center gap-4 outline-none"
           >
             <div className={`h-[1px] transition-all duration-700 ${
-              index === currentSlide ? 'w-12 bg-white' : 'w-4 bg-white/20 group-hover:w-8 group-hover:bg-white/40'
+              index === currentSlide ? 'w-10 bg-white' : 'w-3 bg-white/20 group-hover:w-6 group-hover:bg-white/40'
             }`} />
-            <span className={`font-eng text-[9px] tracking-widest transition-opacity duration-500 ${
+            <span className={`font-eng text-[8px] tracking-widest transition-opacity duration-500 ${
               index === currentSlide ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'
             }`}>
               0{index + 1}
@@ -108,14 +85,19 @@ const Hero: React.FC<HeroProps> = ({ onPortfolio, onContact }) => {
         ))}
       </div>
 
+      {/* Minimal decoration */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-t from-white/20 to-transparent z-20"></div>
+
       <style>{`
-        @keyframes slideUp {
-          from { transform: translateY(110%); }
-          to { transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+        @keyframes fadeInSlideUp {
+          from { 
+            opacity: 0; 
+            transform: translateY(20px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
         }
       `}</style>
     </section>

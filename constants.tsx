@@ -1,74 +1,66 @@
 
 import { Project } from './types';
 
-/**
- * 이미지 로딩 전략:
- * 사용자의 파일 구조에 맞춰 /public/images/ 경로를 사용합니다.
- */
-const IMAGE_BASE = "/public/images/";
-
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: 'Residential Project 01',
+    title: 'Minimalist Sanctuary',
     category: 'RESIDENTIAL',
-    location: 'Seoul',
-    imageUrl: `${IMAGE_BASE}1.png`,
+    location: 'Seoul, Hannam',
+    imageUrl: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1600",
     subImages: [
-      `${IMAGE_BASE}1_1.png`,
-      `${IMAGE_BASE}1_2.png`,
-      `${IMAGE_BASE}1_3.png`
+      "https://images.unsplash.com/photo-1600566753190-17f0bbc564ce?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200"
     ],
-    description: '디자인뮤가 제안하는 고품격 주거 공간 프로젝트입니다. 공간의 효율성과 미학적 가치를 동시에 추구합니다.'
+    description: '여백의 미를 극대화한 한남동 주거 프로젝트입니다. 직선의 미학과 자연광의 조화를 통해 거주자에게 정서적 안정을 제공합니다.'
   },
   {
     id: 2,
-    title: 'Residential Project 02',
+    title: 'Modern Heritage',
     category: 'RESIDENTIAL',
-    location: 'Gyeonggi',
-    imageUrl: `${IMAGE_BASE}2.png`,
+    location: 'Seoul, Seongbuk',
+    imageUrl: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&q=80&w=1600",
     subImages: [
-      `${IMAGE_BASE}2_1.png`,
-      `${IMAGE_BASE}2_2.png`
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200"
     ],
-    description: '삶의 질을 높이는 감각적인 인테리어 솔루션입니다. 자연 친화적인 소재와 모던한 디자인의 조화를 경험하세요.'
+    description: '전통적인 소재와 현대적인 디테일이 만난 성북동 단독주택 프로젝트입니다. 우드와 스톤의 질감을 살려 따뜻하면서도 권위 있는 공간을 완성했습니다.'
   },
   {
     id: 3,
-    title: 'Residential Project 03',
+    title: 'Urban Penthouse',
     category: 'RESIDENTIAL',
-    location: 'Incheon',
-    imageUrl: `${IMAGE_BASE}3.png`,
+    location: 'Incheon, Songdo',
+    imageUrl: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80&w=1600",
     subImages: [
-      `${IMAGE_BASE}3_1.png`
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=1200"
     ],
-    description: '사용자의 라이프스타일을 반영한 맞춤형 주거 설계 프로젝트입니다.'
+    description: '도시의 스카이라인을 배경으로 한 송도 펜트하우스입니다. 개방감 있는 레이아웃과 프리미엄 가구 배치를 통해 럭셔리 라이프스타일을 구현했습니다.'
   },
   {
     id: 4,
-    title: 'Residential Project 04',
+    title: 'Timeless Classic',
     category: 'RESIDENTIAL',
-    location: 'Seoul',
-    imageUrl: `${IMAGE_BASE}4.png`,
+    location: 'Seoul, Gangnam',
+    imageUrl: "https://images.unsplash.com/photo-1616489953149-804cc003468b?auto=format&fit=crop&q=80&w=1600",
     subImages: [],
-    description: '미니멀리즘을 기반으로 한 깔끔하고 정돈된 주거 공간입니다.'
+    description: '유행을 타지 않는 클래식한 우아함을 담은 강남 아파트 리모델링 프로젝트입니다.'
   },
   {
     id: 5,
-    title: 'Residential Project 05',
+    title: 'Zen Garden House',
     category: 'RESIDENTIAL',
-    location: 'Busan',
-    imageUrl: `${IMAGE_BASE}5.png`,
+    location: 'Gyeonggi, Pangyo',
+    imageUrl: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1600",
     subImages: [],
-    description: '클래식한 우아함과 현대적인 편리함이 공존하는 공간입니다.'
+    description: '내부 정원을 품은 판교 단독주택입니다. 자연과의 경계를 허무는 디자인을 통해 매일 여행하는 듯한 기분을 선사합니다.'
   },
   {
     id: 6,
-    title: 'Residential Project 06',
+    title: 'Artistic Loft',
     category: 'RESIDENTIAL',
-    location: 'Seoul',
-    imageUrl: `${IMAGE_BASE}6.png`,
+    location: 'Seoul, Seongsu',
+    imageUrl: "https://images.unsplash.com/photo-1615876234886-fd9a39faa97f?auto=format&fit=crop&q=80&w=1600",
     subImages: [],
-    description: '창의적인 공간 구성을 통해 새로운 주거 문화를 제시합니다.'
+    description: '거칠면서도 섬세한 산업 디자인적 요소를 가미한 성수동 로프트입니다.'
   }
 ];
